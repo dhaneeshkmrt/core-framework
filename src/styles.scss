@@ -53,7 +53,8 @@ $is-dark-theme:   map.get($color-config, 'is-dark');
 
 // add .light-theme class to body to use dark theme
 .dark-theme{
-  @include mat.all-component-themes($dark-theme);
+  // uncomment below line to use dark theme
+  // @include mat.all-component-themes($dark-theme);
   /** global theme variable */
   $color-config:    mat.get-color-config($dark-theme);
   $primary: map.get($color-config, 'primary');
