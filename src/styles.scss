@@ -1,8 +1,8 @@
-
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @use '@angular/material' as mat;
 @use 'sass:map';
+@import 'variables';
 
 // Tail wind includes
 @tailwind base;
@@ -26,23 +26,17 @@ $light-warn: mat.define-palette(mat.$red-palette);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$light-theme: mat.define-light-theme((
-  color: (
-    primary: $light-primary,
-    accent: $light-accent,
-    warn: $light-warn,
-  )
-));
+$light-theme: mat.define-light-theme((color: (primary: $light-primary,
+        accent: $light-accent,
+        warn: $light-warn,
+      )));
 
 // Define a dark theme
 $dark-primary: mat.define-palette(mat.$pink-palette);
 $dark-accent: mat.define-palette(mat.$blue-gray-palette);
-$dark-theme: mat.define-dark-theme((
- color: (
-   primary: $dark-primary,
-   accent: $dark-accent,
- )
-));
+$dark-theme: mat.define-dark-theme((color: (primary: $dark-primary,
+        accent: $dark-accent,
+      )));
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
@@ -50,25 +44,33 @@ $dark-theme: mat.define-dark-theme((
 @include mat.all-component-themes($light-theme);
 
 /** global theme variable */
-$color-config:    mat.get-color-config($light-theme);
+$color-config: mat.get-color-config($light-theme);
 $primary: map.get($color-config, 'primary');
-$accent:  map.get($color-config, 'accent');
-$warn:    map.get($color-config, 'warn');
-$is-dark-theme:   map.get($color-config, 'is-dark');
+$accent: map.get($color-config, 'accent');
+$warn: map.get($color-config, 'warn');
+$is-dark-theme: map.get($color-config, 'is-dark');
 
 // add .light-theme class to body to use dark theme
-.dark-theme{
+.dark-theme {
   // uncomment below line to use dark theme
   // @include mat.all-component-themes($dark-theme);
   /** global theme variable */
-  $color-config:    mat.get-color-config($dark-theme);
+  $color-config: mat.get-color-config($dark-theme);
   $primary: map.get($color-config, 'primary');
-  $accent:  map.get($color-config, 'accent');
-  $warn:    map.get($color-config, 'warn');
-  $is-dark-theme:   map.get($color-config, 'is-dark');
+  $accent: map.get($color-config, 'accent');
+  $warn: map.get($color-config, 'warn');
+  $is-dark-theme: map.get($color-config, 'is-dark');
 }
 
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: $success;
+}

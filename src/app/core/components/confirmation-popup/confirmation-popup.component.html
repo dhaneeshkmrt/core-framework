@@ -1,0 +1,29 @@
+<h2 mat-dialog-title>
+  <div class="flex flex-row justify-between">
+    <div cl>{{ data.title }}</div>
+    <button mat-icon-button class="!-mt-3 !-mr-3" [mat-dialog-close]="'close-icon'" >
+      <mat-icon aria-label="close" >close</mat-icon>
+    </button>
+  </div>
+</h2>
+<mat-dialog-content class="mat-typography">
+  {{ data.message }}
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button
+    mat-raised-button
+    *ngFor="let button of data.actionButtons; let i = index"
+    (click)="onButtonPressed(button)"
+    [mat-dialog-close]="button"
+    [color]="data.primaryButtonIndex === i ? 'primary' : ''"
+  >
+    {{ button }}
+  </button>
+  <button
+    mat-raised-button
+    [mat-dialog-close]="data.closeButtonLabel || 'Cancel'"
+    cdkFocusInitial
+  >
+    {{ data.closeButtonLabel || "Cancel" }}
+  </button>
+</mat-dialog-actions>
