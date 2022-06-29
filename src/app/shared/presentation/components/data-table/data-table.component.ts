@@ -2,6 +2,7 @@ import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable } from '@angular/material/table';
+import { AutoUnSubscribe } from 'angular-auto-unsubscribe';
 import { DataTableDataSource, DataTableItem } from './data-table-datasource';
 
 @Component({
@@ -9,6 +10,7 @@ import { DataTableDataSource, DataTableItem } from './data-table-datasource';
   templateUrl: './data-table.component.html',
   styleUrls: ['./data-table.component.scss']
 })
+@AutoUnSubscribe()
 export class DataTableComponent implements AfterViewInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;

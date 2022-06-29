@@ -5,8 +5,7 @@ import { ResetPasswordComponent } from './components/reset-password/reset-passwo
 import { ChangePasswordComponent } from './components/change-password/change-password.component';
 import { AuthendicationComponent } from './services/authendication/authendication.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
-
-
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -14,10 +13,8 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
     ResetPasswordComponent,
     ChangePasswordComponent,
     AuthendicationComponent,
-    SignUpComponent
+    SignUpComponent,
   ],
-  imports: [
-    CommonModule
-  ]
+  imports: [CommonModule, RouterModule],
 })
-export class AuthModule { }
+export class AuthModule {}

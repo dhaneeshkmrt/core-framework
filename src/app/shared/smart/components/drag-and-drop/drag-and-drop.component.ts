@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
+import { AutoUnSubscribe } from 'angular-auto-unsubscribe';
 
 @Component({
   selector: 'app-drag-and-drop',
   templateUrl: './drag-and-drop.component.html',
   styleUrls: ['./drag-and-drop.component.scss'],
 })
+@AutoUnSubscribe()
 export class DragAndDropComponent {
   todo = [
     'Get to work',

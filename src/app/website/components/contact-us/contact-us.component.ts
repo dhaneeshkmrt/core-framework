@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { AutoUnSubscribe } from 'angular-auto-unsubscribe';
 
 @Component({
   selector: 'app-contact-us',
   templateUrl: './contact-us.component.html',
   styleUrls: ['./contact-us.component.scss']
 })
+@AutoUnSubscribe()
 export class ContactUsComponent {
   addressForm = this.fb.group({
     company: null,
